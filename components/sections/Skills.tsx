@@ -11,22 +11,22 @@ const skillCategories = [
   },
   {
     category: "Backend",
-    skills: ["Node.js", "Express.js", "NestJS", "Python", "REST APIs", "GraphQL"],
+    skills: ["Node.js", "Express.js", "NestJS", "Python", "REST APIs"],
     color: "from-green-400 to-emerald-400",
   },
   {
     category: "Databases",
-    skills: ["MongoDB", "PostgreSQL", "SQL", "DynamoDB", "Firebase", "Prisma ORM"],
+    skills: ["MongoDB", "PostgreSQL", "SQL"],
     color: "from-orange-400 to-red-400",
   },
   {
     category: "Cloud & DevOps",
-    skills: ["AWS (EC2, S3, CloudFront)", "Docker", "Kubernetes", "CI/CD Pipelines", "GitHub Actions", "Terraform"],
+    skills: ["AWS", "Docker", "Kubernetes", "CI/CD Pipelines", "GitHub Actions", "Terraform"],
     color: "from-purple-400 to-pink-400",
   },
   {
     category: "Tools & Others",
-    skills: ["Git", "Linux", "Electron.js", "Webpack", "ESLint", "Jest"],
+    skills: ["Git", "Linux", "Electron.js", "Webpack", "ESLint"],
     color: "from-indigo-400 to-purple-400",
   },
 ]

@@ -6,7 +6,7 @@ import Image from "next/image"
 
 export function About() {
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0f0f23] to-[#1a1a2e]">
+    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-[#0f0f23] to-[#1a1a2e]">
       <div className="max-w-5xl mx-auto">
         <SlideUp>
           <h2 className="text-4xl md:text-5xl font-bold mb-12">
@@ -34,8 +34,8 @@ export function About() {
             >
               <div className="relative w-64 h-64 rounded-lg overflow-hidden border-2 border-[#6366f1] shadow-lg shadow-[#6366f1]/20">
                 <Image
-                  src="/professional-developer-headshot.png"
-                  alt="Professional photo"
+                  src="/pfp.jfif"
+                  alt="Profile photo"
                   width={256}
                   height={256}
                   className="w-full h-full object-cover"
@@ -44,7 +44,7 @@ export function About() {
             </motion.div>
           </SlideUp>
 
-          <SlideUp delay={0.2} className="md:col-span-2">
+          <SlideUp delay={0.2}>
             <div className="space-y-4">
               <p className="text-lg text-muted leading-relaxed">
                 I'm a passionate software engineer with 2 years of hands-on experience building scalable applications.

@@ -6,6 +6,7 @@ import type React from "react"
 interface ButtonProps {
   children: React.ReactNode
   href?: string
+  download?:any;
   onClick?: () => void
   variant?: "primary" | "secondary"
 }

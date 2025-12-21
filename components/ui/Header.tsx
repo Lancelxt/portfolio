@@ -24,7 +24,7 @@ export function Header() {
             backgroundClip: "text",
           }}
         >
-          Dev.
+          Portfolio
         </Link>
         <div className="hidden md:flex gap-8">
           {navItems.map((item, i) => (

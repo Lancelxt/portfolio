@@ -25,7 +25,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center pt-20 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center pt-20 pb-0 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
     >
       {/* Background gradient effect */}
       <div className="absolute inset-0 -z-10">
@@ -41,8 +41,8 @@ export function Hero() {
             </p>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6">
-            Software Engineer <br />
+          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            From Code to Cloud <br />
             <span
               style={{
                 background: "linear-gradient(90deg, #6366f1, #8b5cf6)",
@@ -51,22 +51,26 @@ export function Hero() {
                 backgroundClip: "text",
               }}
             >
-              to DevOps
+              Building Resilient Systems
             </span>
           </motion.h1>
 
           <motion.p variants={itemVariants} className="text-lg sm:text-xl text-muted max-w-2xl mx-auto mb-8">
-            Transitioning from full-stack development to DevOps engineering with 2 years of experience in building
-            scalable cloud infrastructure and automating deployment pipelines.
+          Specializing in cloud infrastructure, CI/CD pipelines, and infrastructure as code. Turning complex challenges into elegant, automated solutions that scale with your business.
           </motion.p>
 
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
             <Button variant="primary" href="#projects">
               View Projects
             </Button>
             <Button variant="secondary" href="#contact">
-              Download Resume
+            Contact Me
             </Button>
+          </motion.div>
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+         <Button variant="secondary" href="/Resume-Malyaj.pdf" download="Resume-Malyaj.pdf">
+  Download Resume
+</Button>
           </motion.div>
 
           <motion.div

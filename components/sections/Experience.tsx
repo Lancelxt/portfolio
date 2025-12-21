@@ -9,7 +9,13 @@ const experiences = [
     role: "Software Engineer",
     period: "Dec 2024 - Present",
     description:
-      "Full-stack development with cloud technologies, building scalable APIs and deploying to AWS infrastructure.",
+      "Full-stack development with cloud technologies, building scalable APIs and deploying to cloud infrastructure.",
+  },
+  {
+    company: "Parcelpicks",
+    role: "Frontend Developer",
+    period: "Oct 2025 - Present",
+    description: "Developing a role based portal for handling or performing courier shipment related actions using React.js",
   },
   {
     company: "Parcelpicks",
@@ -18,10 +24,22 @@ const experiences = [
     description: "Website development and maintenance, customizing themes and plugins for client requirements.",
   },
   {
-    company: "Freelance Projects",
+    company: "Callo",
+    role: "Software Engineer",
+    period: "Jun 2025 - Sep 2025",
+    description: "Full-stack development with Next.js,Nest,js building UI/UX and scalable APIs and deploying to cloud infrastructure.",
+  },
+  {
+    company: "Amigo",
     role: "Full Stack Developer",
-    period: "2023 - Present",
-    description: "Developed multiple projects using React, Node.js, and various cloud platforms for diverse clients.",
+    period: "May 2024 - Sep 2024",
+    description: "Full-stack mobile application development with React Native and Nest.js with improved performance and optimisation and with good UI/UX.",
+  },
+  {
+    company: "ThokBajaar",
+    role: "Frontend Developer",
+    period: "Sep 2023 - June 2024",
+    description: "Full-stack mobile application development with React Native and Nest.js with improved performance and optimisation and with good UI/UX.",
   },
 ]
 

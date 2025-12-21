@@ -164,35 +164,6 @@ export function Contact() {
             </motion.button>
           </motion.form>
         </SlideUp>
-
-        <SlideUp delay={0.3}>
-          <div className="mt-12 flex flex-col sm:flex-row justify-center gap-8 text-center">
-            <motion.a
-              href="mailto:hello@example.com"
-              whileHover={{ scale: 1.05 }}
-              className="text-muted hover:text-[#6366f1] transition-colors"
-            >
-              <p className="text-sm font-medium text-muted mb-1">Email</p>
-              <p className="font-semibold">hello@example.com</p>
-            </motion.a>
-            <motion.a
-              href="https://linkedin.com"
-              whileHover={{ scale: 1.05 }}
-              className="text-muted hover:text-[#6366f1] transition-colors"
-            >
-              <p className="text-sm font-medium text-muted mb-1">LinkedIn</p>
-              <p className="font-semibold">linkedin.com/in/yourprofile</p>
-            </motion.a>
-            <motion.a
-              href="https://github.com"
-              whileHover={{ scale: 1.05 }}
-              className="text-muted hover:text-[#6366f1] transition-colors"
-            >
-              <p className="text-sm font-medium text-muted mb-1">GitHub</p>
-              <p className="font-semibold">github.com/yourprofile</p>
-            </motion.a>
-          </div>
-        </SlideUp>
       </div>
     </section>
   )

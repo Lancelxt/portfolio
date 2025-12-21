@@ -4,10 +4,9 @@ import { motion } from "framer-motion"
 
 export function Footer() {
   const socialLinks = [
-    { name: "GitHub", url: "#" },
-    { name: "LinkedIn", url: "#" },
-    { name: "Twitter", url: "#" },
-    { name: "Email", url: "mailto:hello@example.com" },
+    { name: "GitHub", url: "https://github.com/Lancelxt" },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/malyaj-singh-528a8b15b/" },
+    { name: "Email", url: "mailto:malyajsingh2001@gmail.com" },
   ]
 
   return (
@@ -21,8 +20,8 @@ export function Footer() {
           className="flex flex-col md:flex-row justify-between items-center gap-8"
         >
           <div className="text-center md:text-left">
-            <h3 className="text-lg font-bold gradient-text mb-2">Dev.</h3>
-            <p className="text-muted text-sm">Software Engineer transitioning to DevOps</p>
+            <h3 className="text-lg font-bold gradient-text mb-2">Malyaj Singh</h3>
+            <p className="text-muted text-sm">Software Engineer</p>
           </div>
           <div className="flex gap-6">
             {socialLinks.map((link) => (
