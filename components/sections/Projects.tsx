@@ -4,6 +4,14 @@ import { motion } from "framer-motion";
 import { SlideUp } from "../animations/SlideUp";
 
 const projects = [
+ {
+  title: "Linux User Manager",
+  description:
+    "Developed a pure Bash CLI tool for managing Linux users, allowing addition, deletion, modification, and listing of users with logging functionality. Implemented a clean interactive menu and secure logging mechanism, demonstrating strong Linux and shell scripting skills suitable for system administration and DevOps tasks.",
+  tags: ["Bash", "Linux", "CLI", "DevOps"],
+  link: "#",  
+  github: "https://github.com/lancelxt/linux-user-manager",
+},
   {
     title: "HYPEWIRE (Social Media Marketing Website)",
     description:
