@@ -9,7 +9,6 @@ const projects = [
   description:
     "Developed a pure Bash CLI tool for managing Linux users, allowing addition, deletion, modification, and listing of users with logging functionality. Implemented a clean interactive menu and secure logging mechanism, demonstrating strong Linux and shell scripting skills suitable for system administration and DevOps tasks.",
   tags: ["Bash", "Linux", "CLI", "DevOps"],
-  link: "#",  
   github: "https://github.com/lancelxt/linux-user-manager",
 },
   {
@@ -101,7 +100,8 @@ export function Projects() {
                 ))}
               </div>
               <div className="flex gap-4">
-                <motion.a
+                {project.link &&(
+  <motion.a
                   href={project.link}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -109,6 +109,8 @@ export function Projects() {
                 >
                   Live Demo →
                 </motion.a>
+                )}
+              
                 <motion.a
                   href={project.github}
                   whileHover={{ scale: 1.05 }}
