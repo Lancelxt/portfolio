@@ -1,129 +1,154 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import { SlideUp } from "../animations/SlideUp";
+import React from 'react'
+import { motion, Variants } from 'framer-motion'
+import { Github, ExternalLink, Play } from 'lucide-react'
 
-const projects = [
- {
-  title: "Linux User Manager",
-  description:
-    "Developed a pure Bash CLI tool for managing Linux users, allowing addition, deletion, modification, and listing of users with logging functionality. Implemented a clean interactive menu and secure logging mechanism, demonstrating strong Linux and shell scripting skills suitable for system administration and DevOps tasks.",
-  tags: ["Bash", "Linux", "CLI", "DevOps"],
-  github: "https://github.com/lancelxt/linux-user-manager",
-},
+const PROJECTS = [
   {
-    title: "HYPEWIRE (Social Media Marketing Website)",
-    description:
-      " Created a single-page, responsive social media marketing website, showcasing strong front-end development skills,Utilized JavaScript extensively to deliver an engaging user experience with smooth animations and interactive visual effects.",
-    tags: ["JavaScript"],
+    title: "Linux user manager",
+    description: "Pure bash cli tool for managing linux users. Features interactive menus, secure logging, and automated user lifecycle management.",
+    tags: ["bash", "linux", "cli", "devops"],
+    image: "/projects/linux.png",
+    github: "https://github.com/lancelxt/linux-user-manager",
+  },
+  {
+    title: "Hypewire",
+    description: "Social media marketing platform prototype. Focused on smooth animations, dynamic ui, and conversion-optimized layouts.",
+    tags: ["javascript", "gsap", "frontend"],
+    image: "/projects/hypewire.png",
     link: "https://hype-wire.vercel.app/",
     github: "https://github.com/Lancelxt/HypeWire---a-digital-media-website-Project-",
   },
   {
-    title: "MovieDB",
-    description:
-      "Built a dynamic movie database website using React, leveraging the TMDB API for comprehensive film information. Ensured full responsiveness across various screen sizes (desktop, tablet, mobile) for optimal user accessibility. Implemented robust API calling with Axios, incorporating advanced error handling and efficient routing for seamless navigation.",
-    tags: ["React.js", "Axios", "Responsive UI"],
+    title: "Moviedb",
+    description: "Dynamic movie database leveraging tmdb api. Features advanced search, category filtering, and high-performance image loading.",
+    tags: ["react.js", "axios", "api-integration"],
+    image: "/projects/moviedb.png",
     link: "https://moviedatabase-sandy.vercel.app/",
     github: "https://github.com/Lancelxt/MovieDB",
   },
-  {
-    title: "Glitch Realm - A gaming blog",
-    description:
-      "Full-stack e-commerce solution with payment integration, inventory management, and order tracking.",
-    tags: ["Next.js","Responsive UI"],
-    link: "https://glitch-realm.vercel.app/",
-    github: "https://github.com/Lancelxt/Glitch-Realm-A-Gaming-Blog",
-  },
+]
 
-];
-
+/**
+ * Projects Section
+ * Part of the 'Midnight Minimalist' overhaul.
+ * Features a media-first, premium project showcase.
+ */
 export function Projects() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
-    show: {
+    visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
+      transition: { staggerChildren: 0.15 }
+    }
+  }
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  };
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+  }
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto">
-        <SlideUp>
-          <h2 className="text-4xl md:text-5xl font-bold mb-12">
-            Featured <span className="gradient-text">Projects</span>
-          </h2>
-        </SlideUp>
+    <section id="projects" className="py-32 px-6 bg-transparent">
+      <div className="mx-auto max-w-6xl">
+        {/* Section Header */}
+        <div className="mb-20 border-b border-white/5 pb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <h2 className="text-4xl font-bold tracking-tight text-white mb-3">Featured works</h2>
+            <p className="text-slate-400 text-base italic">Digital experiments and engineering feats.</p>
+          </div>
+          <div className="text-[10px] font-mono text-slate-600 uppercase tracking-[0.3em]">archived sessions _03</div>
+        </div>
 
-        <motion.div
+        {/* The Grid */}
+        <motion.div 
           variants={containerVariants}
           initial="hidden"
-          whileInView="show"
+          whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-6"
+          className="grid gap-12 md:grid-cols-2"
         >
-          {projects.map((project, idx) => (
-            <motion.div
-              key={idx}
+          {PROJECTS.map((project) => (
+            <motion.div 
+              key={project.title}
               variants={itemVariants}
-              whileHover={{
-                y: -8,
-                boxShadow: "0 20px 40px rgba(99, 102, 241, 0.1)",
-              }}
-              className="card-bg rounded-lg p-6 md:p-8 flex flex-col transition-all group"
+              className="group relative flex flex-col"
             >
-              <h3
-                className="text-xl font-semibold mb-3 transition-all"
-                style={{ color: idx % 2 === 0 ? "#6366f1" : "#8b5cf6" }}
-              >
-                {project.title}
-              </h3>
-              <p className="text-muted mb-6 flex-grow leading-relaxed">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2 py-1 rounded text-xs bg-[#2d2d44] text-[#6366f1]"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <div className="flex gap-4">
-                {project.link &&(
-  <motion.a
-                  href={project.link}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="text-[#6366f1] hover:text-[#8b5cf6] text-sm font-medium transition-colors"
-                >
-                  Live Demo →
-                </motion.a>
+              {/* Media Preview Container */}
+              <div className="relative aspect-[16/9] overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] transition-all group-hover:border-amber-400/30">
+                {project.image ? (
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center">
+                    <Play className="h-10 w-10 text-amber-400/20" />
+                  </div>
                 )}
-              
-                <motion.a
-                  href={project.github}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="text-[#6366f1] hover:text-[#8b5cf6] text-sm font-medium transition-colors"
-                >
-                  GitHub →
-                </motion.a>
+                
+                {/* Modern Overlay (Glassmorphism) */}
+                <div className="absolute inset-0 z-20 flex items-center justify-center gap-4 bg-black/40 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
+                  {project.github && (
+                    <a 
+                      href={project.github} 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-950 transition-transform active:scale-90 hover:scale-110"
+                    >
+                      <Github className="h-5 w-5" />
+                    </a>
+                  )}
+                  {project.link && (
+                    <a 
+                      href={project.link} 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-400 text-slate-950 transition-transform active:scale-90 hover:scale-110"
+                    >
+                      <ExternalLink className="h-5 w-5" />
+                    </a>
+                  )}
+                </div>
+              </div>
+
+              {/* Text Content */}
+              <div className="mt-8">
+                <div className="mb-4 flex items-center justify-between">
+                  <a 
+                    href={project.link || project.github} 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="inline-block"
+                  >
+                    <h3 className="text-2xl font-bold text-white transition-colors hover:text-amber-400">
+                      {project.title}
+                    </h3>
+                  </a>
+                  <span className="text-[10px] font-medium text-slate-500 uppercase tracking-widest bg-white/5 px-2 py-1 rounded">Project</span>
+                </div>
+                
+                <p className="mb-6 text-sm leading-relaxed text-slate-400">
+                  {project.description}
+                </p>
+                
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span 
+                      key={tag}
+                      className="text-[11px] font-medium text-slate-500 transition-colors group-hover:text-amber-400"
+                    >
+                      # {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
         </motion.div>
       </div>
     </section>
-  );
+  )
 }

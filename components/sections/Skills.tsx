@@ -1,106 +1,93 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { SlideUp } from "../animations/SlideUp"
+import React from 'react'
+import { motion, Variants } from 'framer-motion'
+import { Server, Layout, Cpu, ShieldCheck } from 'lucide-react'
 
-const skillCategories = [
+const SKILL_GROUPS = [
   {
-    category: "Frontend",
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML/CSS", "React Native"],
-    color: "from-blue-400 to-cyan-400",
+    title: "Frontend engineering",
+    icon: <Layout className="h-5 w-5 text-amber-400" />,
+    skills: ["React 19", "Next.js 15", "TypeScript", "Tailwind CSS", "Framer motion"]
   },
   {
-    category: "Backend",
-    skills: ["Node.js", "Express.js", "NestJS", "Python", "REST APIs"],
-    color: "from-green-400 to-emerald-400",
+    title: "Backend & orchestration",
+    icon: <Server className="h-5 w-5 text-amber-400" />,
+    skills: ["Node.js", "Nest.js", "PostgreSQL", "Redis", "Prisma", "Go"]
   },
   {
-    category: "Databases",
-    skills: ["MongoDB", "PostgreSQL", "SQL"],
-    color: "from-orange-400 to-red-400",
+    title: "Cloud infrastructure",
+    icon: <Cpu className="h-5 w-5 text-amber-400" />,
+    skills: ["AWS", "Docker", "Kubernetes", "Terraform", "CI/CD", "GitHub actions"]
   },
   {
-    category: "Cloud & DevOps",
-    skills: ["AWS", "Docker", "Kubernetes", "CI/CD Pipelines", "GitHub Actions", "Terraform"],
-    color: "from-purple-400 to-pink-400",
-  },
-  {
-    category: "Tools & Others",
-    skills: ["Git", "Linux", "Electron.js", "Webpack", "ESLint"],
-    color: "from-indigo-400 to-purple-400",
-  },
+    title: "Security & monitoring",
+    icon: <ShieldCheck className="h-5 w-5 text-amber-400" />,
+    skills: ["JWT auth", "Prometheus", "Grafana", "Sentry", "Vercel analytics"]
+  }
 ]
 
+/**
+ * Skills Section
+ * Part of the 'Midnight Minimalist' overhaul.
+ * Focuses on a clean, monochromatic grid layout.
+ */
 export function Skills() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
-    show: {
+    visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
+      transition: { staggerChildren: 0.1 }
+    }
   }
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
   }
 
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0f0f23] to-[#1a1a2e]">
-      <div className="max-w-4xl mx-auto">
-        <SlideUp>
-          <h2 className="text-4xl md:text-5xl font-bold mb-12">
-            Skills{" "}
-            <span
-              style={{
-                background: "linear-gradient(90deg, #6366f1, #8b5cf6)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              &
-            </span>{" "}
-            Expertise
-          </h2>
-        </SlideUp>
+    <section id="skills" className="py-24 px-6">
+      <div className="mx-auto max-w-6xl">
+        {/* Section Header */}
+        <div className="mb-16 border-b border-white/5 pb-8">
+          <h2 className="text-3xl font-bold tracking-tight text-white mb-2">Technical arsenal</h2>
+          <p className="text-slate-400 text-sm italic">Specialized in building resilient digital ecosystems.</p>
+        </div>
 
-        <motion.div
+        {/* The Grid */}
+        <motion.div 
           variants={containerVariants}
           initial="hidden"
-          whileInView="show"
+          whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-6"
+          className="grid gap-8 md:grid-cols-2 lg:grid-cols-4"
         >
-          {skillCategories.map((category, idx) => (
-            <motion.div
-              key={category.category}
+          {SKILL_GROUPS.map((group) => (
+            <motion.div 
+              key={group.title}
               variants={itemVariants}
-              whileHover={{ y: -4 }}
-              className="bg-[#1a1a2e] border border-[#2d2d44] rounded-lg p-6"
+              className="group relative flex flex-col rounded-2xl border border-white/5 bg-white/[0.02] p-8 hover:bg-white/[0.04] transition-all"
             >
-              <h3
-                className="text-lg font-semibold mb-4"
-                style={{
-                  background: "linear-gradient(90deg, #6366f1, #8b5cf6)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                {category.category}
+              <div className="mb-6 flex items-center justify-between">
+                <div className="p-2.5 rounded-xl bg-amber-400/10 transition-transform group-hover:scale-110">
+                  {group.icon}
+                </div>
+                <div className="text-[10px] font-medium text-slate-600 uppercase tracking-widest hidden group-hover:block">Expertise</div>
+              </div>
+
+              <h3 className="mb-4 text-base font-semibold text-white tracking-tight">
+                {group.title}
               </h3>
+              
               <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
-                  <motion.span
+                {group.skills.map((skill) => (
+                  <span 
                     key={skill}
-                    whileHover={{ scale: 1.05 }}
-                    className="px-3 py-1 rounded-full bg-[#2d2d44] text-sm text-[#94a3b8] hover:bg-[#6366f1] hover:text-white transition-all cursor-default"
+                    className="text-[12px] text-slate-400 group-hover:text-slate-300 transition-colors"
                   >
-                    {skill}
-                  </motion.span>
+                   • {skill}
+                  </span>
                 ))}
               </div>
             </motion.div>

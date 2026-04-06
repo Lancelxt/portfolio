@@ -1,34 +1,19 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Inter, JetBrains_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { GlowContainer } from "../components/GlowContainer"
+import WhatsAppButton from "../components/WhatsAppButton"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], variable: '--font-sans' })
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: '--font-mono' })
 
 export const metadata: Metadata = {
-  title: "Malyaj Singh | Portfolio",
+  title: "Malyaj Singh | High-Performance Engineer",
   description:
-    "Specializing in cloud infrastructure, CI/CD pipelines, and infrastructure as code. Turning complex challenges into elegant, automated solutions that scale with your business.",
-  generator: "v0.app",
-  icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
-  },
+    "Specializing in cloud infrastructure, CI/CD pipelines, and high-aesthetic portfolio design. Merging technical depth with premium UX.",
+  generator: "Armory AI OS",
 }
 
 export default function RootLayout({
@@ -37,9 +22,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`font-sans antialiased`}>
-        {children}
+    <html lang="en" className="dark scroll-smooth">
+      <body className={`${inter.variable} ${mono.variable} font-sans antialiased text-white selection:bg-primary/20`}>
+        <GlowContainer>
+          {children}
+        </GlowContainer>
+        <WhatsAppButton />
         <Analytics />
       </body>
     </html>
