@@ -30,7 +30,7 @@ export function InteractiveDots() {
 
     let animationFrameId: number
     let particles: Particle[] = []
-    const particleCount = 280
+    const particleCount = 480
 
     const resize = () => {
       canvas.width = window.innerWidth
