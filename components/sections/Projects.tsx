@@ -6,25 +6,34 @@ import { Github, ExternalLink, Play } from 'lucide-react'
 
 const PROJECTS = [
   {
-    title: "Parcelpicks",
-    description: "Architecting a high-performance courier aggregator platform. Engineered complex data dashboards with Recharts, integrated Google Maps API for real-time tracking, and optimized frontend performance for high-concurrency logistics.",
+    title: "Parcelpicks Web",
+    description: "Engineered a high-performance, SEO-optimized business platform using WordPress. Developed custom themes and plugins to streamline shipment logistics, optimized core web vitals, and integrated secure server-side logic for high-traffic scalability.",
+    tags: ["WordPress", "PHP", "SEO", "Optimization"],
+        image: 'projects/parcelpicks_wordpress.jpg',
+    link: "https://parcelpicks.com/",
+  },
+   {
+    title: "Parcelpicks Dashboard",
+    description: "Architecting a high-performance courier aggregator dashboard. Engineered complex data visualizations with Recharts, integrated Google Maps API for real-time tracking, and optimized React performance for high-concurrency logistics management.",
     tags: ["React 19", "Recharts", "Google Maps", "Tailwind"],
-    image: null,
-    link: "https://parcelpicks.in/",
+
+      image: 'projects/parcelpicks.jpg',
+    link: "https://beta.parcelpicks.com/login",
+    
   },
   {
     title: "Callo",
     description: "Full-stack development for a social media ecosystem dedicated to content creators. Built mission-critical features including secure document signing, automated generation workflows, and a refined account management suite.",
     tags: ["Next.js", "Full-stack", "Document Automation", "UI/UX"],
-    image: null,
-    link: "https://callo.co.in/",
+    image: 'projects/Callo.jpg',
+    link: "https://app.wearecallo.com/login",
   },
   {
     title: "Tranquilstay",
     description: "Deployment of a premium static website for an Indian homestay. Focused on superior responsive design and integrated SEO-friendly content to maximize local organic reach and lead generation through serverless contact forms.",
     tags: ["Static Site", "SEO", "Responsive Design", "Serverless"],
-    image: null,
-    link: "https://tranquilstay.in/",
+    image: 'projects/tranquilstay.jpg',
+    link: "https://www.thetranquilstay.in/",
   },
   {
     title: "Flexo ERP",
