@@ -52,20 +52,20 @@ export default function Hero() {
         {/* High-Impact Typography (Inter) */}
         <motion.h1 
           variants={itemVariants}
-          className="text-6xl font-bold tracking-tight text-white md:text-8xl lg:text-9xl"
+          className="text-6xl font-extrabold tracking-tight text-white md:text-8xl lg:text-9xl"
         >
           Crafting <br />
           <span className="text-amber-400 italic">resilient</span> <br />
           systems.
         </motion.h1>
 
-        {/* Simplified Lead Text */}
+        {/* Optimized Lead Text for SEO */}
         <motion.p 
           variants={itemVariants}
           className="mt-10 mx-auto max-w-2xl text-lg leading-relaxed text-slate-400 md:text-xl"
         >
-          Malyaj Singh — Software engineer specializing in 
-          cloud infrastructure, high-aesthetic interfaces, and scalable engineering.
+          Malyaj Singh — Full-stack software engineer specializing in 
+          resilient cloud architecture, automated DevOps pipelines, and high-performance digital systems.
         </motion.p>
 
         {/* Minimalist CTAs */}
@@ -73,12 +73,12 @@ export default function Hero() {
           variants={itemVariants}
           className="mt-12 flex flex-wrap items-center justify-center gap-6"
         >
-          <button className="group flex items-center gap-2 rounded-full bg-amber-400 px-8 py-4 text-sm font-semibold text-slate-950 transition-all hover:bg-amber-300 hover:scale-[1.02] active:scale-95">
+          <button onClick={() => window.location.href = "#projects"} className="group flex items-center gap-2 rounded-full bg-amber-400 px-8 py-4 text-sm font-semibold text-slate-950 transition-all hover:bg-amber-300 hover:scale-[1.02] active:scale-95">
             View projects
             <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </button>
           
-          <button className="text-sm font-medium text-slate-400 transition-colors hover:text-white">
+          <button onClick={() => window.location.href = "#contact"} className="text-sm font-medium text-slate-400 transition-colors hover:text-white">
             Get in touch
           </button>
         </motion.div>

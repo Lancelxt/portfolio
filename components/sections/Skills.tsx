@@ -67,10 +67,10 @@ export function Skills() {
             <motion.div 
               key={group.title}
               variants={itemVariants}
-              className="group relative flex flex-col rounded-2xl border border-white/5 bg-white/[0.02] p-8 hover:bg-white/[0.04] transition-all"
+              className="group relative flex flex-col rounded-3xl border border-white/5 bg-white/[0.02] p-8 hover:bg-white/[0.04] hover:border-amber-400/20 transition-all backdrop-blur-3xl"
             >
               <div className="mb-6 flex items-center justify-between">
-                <div className="p-2.5 rounded-xl bg-amber-400/10 transition-transform group-hover:scale-110">
+                <div className="p-3 rounded-2xl bg-amber-400/5 ring-1 ring-inset ring-amber-400/10 transition-transform group-hover:scale-110 shadow-[0_0_15px_rgba(251,191,36,0.1)] group-hover:shadow-[0_0_20px_rgba(251,191,36,0.2)]">
                   {group.icon}
                 </div>
                 <div className="text-[10px] font-medium text-slate-600 uppercase tracking-widest hidden group-hover:block">Expertise</div>

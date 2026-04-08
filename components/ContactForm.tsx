@@ -33,7 +33,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <div className="text-[10px] font-medium text-slate-500 uppercase tracking-widest mb-1">Email</div>
-                  <div className="text-lg font-semibold text-white">malyaj@armory.io</div>
+                  <div className="text-lg font-semibold text-white">malyajsingh2001@gmail.com</div>
                 </div>
               </div>
 
@@ -43,17 +43,17 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <div className="text-[10px] font-medium text-slate-500 uppercase tracking-widest mb-1">Location</div>
-                  <div className="text-lg font-semibold text-white">New Delhi, India</div>
+                  <div className="text-lg font-semibold text-white">India</div>
                 </div>
               </div>
             </div>
 
             {/* Simple Social Icons */}
             <div className="mt-12 flex gap-4">
-              <a href="#" className="p-3 rounded-xl border border-white/5 bg-white/[0.02] text-slate-400 hover:text-white hover:bg-white/5 transition-all">
+              <a href="https://github.com/lancelxt" className="p-3 rounded-xl border border-white/5 bg-white/[0.02] text-slate-400 hover:text-white hover:bg-white/5 transition-all">
                 <Github className="h-5 w-5" />
               </a>
-              <a href="#" className="p-3 rounded-xl border border-white/5 bg-white/[0.02] text-slate-400 hover:text-white hover:bg-white/5 transition-all">
+              <a href="https://www.linkedin.com/in/malyaj-singh-07b58124b/" className="p-3 rounded-xl border border-white/5 bg-white/[0.02] text-slate-400 hover:text-white hover:bg-white/5 transition-all">
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>

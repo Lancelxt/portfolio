@@ -6,162 +6,105 @@ import Image from "next/image"
 
 export function About() {
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-[#0f0f23] to-[#1a1a2e]">
-      <div className="max-w-5xl mx-auto">
+    <section id="about" className="py-32 px-6 bg-transparent">
+      <div className="max-w-6xl mx-auto">
         <SlideUp>
-          <h2 className="text-4xl md:text-5xl font-bold mb-12">
-            About{" "}
-            <span
-              style={{
-                background: "linear-gradient(90deg, #6366f1, #8b5cf6)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              Me
-            </span>
-          </h2>
+          <div className="mb-20 border-b border-white/5 pb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <h2 className="text-4xl font-bold tracking-tight text-white mb-3">About me</h2>
+              <p className="text-slate-400 text-base italic">The architect behind the systems.</p>
+            </div>
+          </div>
         </SlideUp>
 
-        <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-12">
-          <SlideUp delay={0.1}>
-            <motion.div
-              whileInView={{ scale: 1 }}
-              initial={{ scale: 0.8 }}
-              viewport={{ once: true }}
-              className="flex justify-center"
-            >
-              <div className="relative w-64 h-64 rounded-lg overflow-hidden border-2 border-[#6366f1] shadow-lg shadow-[#6366f1]/20">
+        <div className="grid md:grid-cols-12 gap-12 mb-20 items-center">
+          <div className="md:col-span-4 lg:col-span-3">
+            <SlideUp delay={0.1}>
+              <motion.div
+                whileInView={{ scale: 1, opacity: 1 }}
+                initial={{ scale: 0.9, opacity: 0 }}
+                viewport={{ once: true }}
+                className="relative aspect-square rounded-3xl overflow-hidden border border-white/10 bg-white/[0.02] group"
+              >
                 <Image
                   src="/pfp.jfif"
                   alt="Profile photo"
-                  width={256}
-                  height={256}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-              </div>
-            </motion.div>
-          </SlideUp>
+                <div className="absolute inset-0 bg-amber-400/5 mix-blend-overlay" />
+              </motion.div>
+            </SlideUp>
+          </div>
 
-          <SlideUp delay={0.2}>
-            <div className="space-y-4">
-              <p className="text-lg text-muted leading-relaxed">
-                I'm a passionate software engineer with 2 years of hands-on experience building scalable applications.
-                Currently, I'm transitioning into DevOps engineering to leverage my development background in
-                infrastructure automation and cloud architecture.
-              </p>
-              <p className="text-lg text-muted leading-relaxed">
-                My journey in tech has taught me the importance of clean code, efficient systems, and continuous
-                learning. I thrive in collaborative environments where I can contribute to meaningful projects and help
-                teams scale their operations.
-              </p>
-              <p className="text-lg text-muted leading-relaxed">
-                When I'm not coding or architecting infrastructure, I enjoy exploring new technologies, contributing to
-                open-source projects, and mentoring junior developers.
-              </p>
-            </div>
-          </SlideUp>
+          <div className="md:col-span-8 lg:col-span-9">
+            <SlideUp delay={0.2}>
+              <div className="space-y-6 max-w-3xl">
+                <p className="text-xl text-white font-semibold leading-snug">
+                  Merging technical precision with high-performance architecture.
+                </p>
+                <p className="text-lg text-slate-400 leading-relaxed">
+                  I am a software engineer with a strategic focus on bridging the gap between sophisticated application development and resilient cloud infrastructure. With over 2 years of hands-on experience, I specialize in building systems that are not only functional but architecturally sound and horizontally scalable.
+                </p>
+                <p className="text-lg text-slate-400 leading-relaxed">
+                  My philosophy is rooted in "Resilient Engineering"—ensuring every line of code contributes to a system's ability to evolve, scale, and maintain absolute reliability in production environments.
+                </p>
+              </div>
+            </SlideUp>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid md:grid-cols-2 gap-8">
           <SlideUp delay={0.3}>
-            <div
-              className="border border-[#2d2d44] rounded-lg p-6 md:p-8"
-              style={{
-                background: "rgba(26, 26, 46, 0.5)",
-              }}
-            >
-              <h3
-                className="text-xl font-semibold mb-6"
-                style={{
-                  background: "linear-gradient(90deg, #6366f1, #8b5cf6)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                Career Progression
+            <div className="border border-white/5 rounded-3xl p-8 bg-white/[0.02] backdrop-blur-3xl hover:border-amber-400/20 transition-colors group">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                <div className="h-1.5 w-1.5 rounded-full bg-amber-400" />
+                Career progression
               </h3>
-              <div className="space-y-4">
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.3 }}
-                  viewport={{ once: true }}
-                  className="flex items-start gap-3"
-                >
-                  <div className="w-3 h-3 rounded-full bg-[#6366f1] mt-2"></div>
-                  <div>
-                    <p className="font-semibold">Software Developer</p>
-                    <p className="text-sm text-muted">Full-stack development</p>
-                  </div>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.4 }}
-                  viewport={{ once: true }}
-                  className="flex items-start gap-3"
-                >
-                  <div className="w-3 h-3 rounded-full bg-[#8b5cf6] mt-2"></div>
-                  <div>
-                    <p className="font-semibold">Cloud Infrastructure</p>
-                    <p className="text-sm text-muted">AWS & containerization</p>
-                  </div>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5 }}
-                  viewport={{ once: true }}
-                  className="flex items-start gap-3"
-                >
-                  <div className="w-3 h-3 rounded-full bg-[#6366f1] mt-2"></div>
-                  <div>
-                    <p className="font-semibold">DevOps Engineer (Current)</p>
-                    <p className="text-sm text-muted">Pipeline automation & deployment</p>
-                  </div>
-                </motion.div>
+              <div className="space-y-6">
+                {[
+                  { title: "Software Developer", sub: "Full-stack development" },
+                  { title: "Cloud Infrastructure", sub: "AWS & containerization" },
+                  { title: "DevOps Engineer (Current)", sub: "Pipeline automation & deployment" }
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.3 + i * 0.1 }}
+                    viewport={{ once: true }}
+                    className="flex items-start gap-4"
+                  >
+                    <div className="text-[10px] font-mono text-amber-400/40 mt-1">0{i+1}</div>
+                    <div>
+                      <p className="font-semibold text-white group-hover:text-amber-400 transition-colors">{item.title}</p>
+                      <p className="text-sm text-slate-500">{item.sub}</p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </SlideUp>
 
           <SlideUp delay={0.4}>
-            <div
-              className="border border-[#2d2d44] rounded-lg p-6 md:p-8"
-              style={{
-                background: "rgba(26, 26, 46, 0.5)",
-              }}
-            >
-              <h3
-                className="text-xl font-semibold mb-6"
-                style={{
-                  background: "linear-gradient(90deg, #6366f1, #8b5cf6)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                Fun Facts
+            <div className="border border-white/5 rounded-3xl p-8 bg-white/[0.02] backdrop-blur-3xl hover:border-amber-400/20 transition-colors group">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                <div className="h-1.5 w-1.5 rounded-full bg-amber-400" />
+                Fun facts
               </h3>
-              <ul className="space-y-3 text-muted">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#6366f1] mt-1">→</span>
-                  <span>Passionate about automation and infrastructure optimization</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#8b5cf6] mt-1">→</span>
-                  <span>Enjoy learning new tools and frameworks</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#6366f1] mt-1">→</span>
-                  <span>Active open-source contributor and community member</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#8b5cf6] mt-1">→</span>
-                  <span>Love mentoring and helping others grow in tech</span>
-                </li>
+              <ul className="space-y-4 text-slate-400">
+                {[
+                  "Passionate about automation and infrastructure optimization",
+                  "Enjoy learning new tools and frameworks",
+                  "Active open-source contributor and community member",
+                  "Love mentoring and helping others grow in tech",
+                  "Exploring the convergence of AI agents and automated infrastructure"
+                ].map((fact, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm">
+                    <span className="text-amber-400 mt-1">→</span>
+                    <span>{fact}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </SlideUp>

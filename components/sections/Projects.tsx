@@ -6,27 +6,31 @@ import { Github, ExternalLink, Play } from 'lucide-react'
 
 const PROJECTS = [
   {
-    title: "Linux user manager",
-    description: "Pure bash cli tool for managing linux users. Features interactive menus, secure logging, and automated user lifecycle management.",
-    tags: ["bash", "linux", "cli", "devops"],
-    image: "/projects/linux.png",
-    github: "https://github.com/lancelxt/linux-user-manager",
+    title: "Parcelpicks",
+    description: "Architecting a high-performance courier aggregator platform. Engineered complex data dashboards with Recharts, integrated Google Maps API for real-time tracking, and optimized frontend performance for high-concurrency logistics.",
+    tags: ["React 19", "Recharts", "Google Maps", "Tailwind"],
+    image: null,
+    link: "https://parcelpicks.in/",
   },
   {
-    title: "Hypewire",
-    description: "Social media marketing platform prototype. Focused on smooth animations, dynamic ui, and conversion-optimized layouts.",
-    tags: ["javascript", "gsap", "frontend"],
-    image: "/projects/hypewire.png",
-    link: "https://hype-wire.vercel.app/",
-    github: "https://github.com/Lancelxt/HypeWire---a-digital-media-website-Project-",
+    title: "Callo",
+    description: "Full-stack development for a social media ecosystem dedicated to content creators. Built mission-critical features including secure document signing, automated generation workflows, and a refined account management suite.",
+    tags: ["Next.js", "Full-stack", "Document Automation", "UI/UX"],
+    image: null,
+    link: "https://callo.co.in/",
   },
   {
-    title: "Moviedb",
-    description: "Dynamic movie database leveraging tmdb api. Features advanced search, category filtering, and high-performance image loading.",
-    tags: ["react.js", "axios", "api-integration"],
-    image: "/projects/moviedb.png",
-    link: "https://moviedatabase-sandy.vercel.app/",
-    github: "https://github.com/Lancelxt/MovieDB",
+    title: "Tranquilstay",
+    description: "Deployment of a premium static website for an Indian homestay. Focused on superior responsive design and integrated SEO-friendly content to maximize local organic reach and lead generation through serverless contact forms.",
+    tags: ["Static Site", "SEO", "Responsive Design", "Serverless"],
+    image: null,
+    link: "https://tranquilstay.in/",
+  },
+  {
+    title: "Flexo ERP",
+    description: "Engineered a custom ERP solution for the flex printing industry. Digitized the entire production lifecycle, eliminating paper workflows and manual inter-departmental communication through automated status-tracking nodes.",
+    tags: ["ERP", "Workflow Automation", "Systems Engineering", "Operations"],
+    image: null,
   },
 ]
 
@@ -58,7 +62,6 @@ export function Projects() {
             <h2 className="text-4xl font-bold tracking-tight text-white mb-3">Featured works</h2>
             <p className="text-slate-400 text-base italic">Digital experiments and engineering feats.</p>
           </div>
-          <div className="text-[10px] font-mono text-slate-600 uppercase tracking-[0.3em]">archived sessions _03</div>
         </div>
 
         {/* The Grid */}
@@ -89,18 +92,8 @@ export function Projects() {
                   </div>
                 )}
                 
-                {/* Modern Overlay (Glassmorphism) */}
-                <div className="absolute inset-0 z-20 flex items-center justify-center gap-4 bg-black/40 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
-                  {project.github && (
-                    <a 
-                      href={project.github} 
-                      target="_blank" 
-                      rel="noreferrer" 
-                      className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-950 transition-transform active:scale-90 hover:scale-110"
-                    >
-                      <Github className="h-5 w-5" />
-                    </a>
-                  )}
+                {/* Modern Overlay (Glassmorphism - Gold Tinted) */}
+                <div className="absolute inset-0 z-20 flex items-center justify-center gap-4 bg-amber-400/5 opacity-0 backdrop-blur-md transition-all duration-500 group-hover:opacity-100 ring-1 ring-inset ring-amber-400/10">
                   {project.link && (
                     <a 
                       href={project.link} 
@@ -117,16 +110,22 @@ export function Projects() {
               {/* Text Content */}
               <div className="mt-8">
                 <div className="mb-4 flex items-center justify-between">
-                  <a 
-                    href={project.link || project.github} 
-                    target="_blank" 
-                    rel="noreferrer" 
-                    className="inline-block"
-                  >
-                    <h3 className="text-2xl font-bold text-white transition-colors hover:text-amber-400">
+                  {project.link ? (
+                    <a 
+                      href={project.link} 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="inline-block"
+                    >
+                      <h3 className="text-2xl font-bold text-white transition-colors hover:text-amber-400">
+                        {project.title}
+                      </h3>
+                    </a>
+                  ) : (
+                    <h3 className="text-2xl font-bold text-white">
                       {project.title}
                     </h3>
-                  </a>
+                  )}
                   <span className="text-[10px] font-medium text-slate-500 uppercase tracking-widest bg-white/5 px-2 py-1 rounded">Project</span>
                 </div>
                 
